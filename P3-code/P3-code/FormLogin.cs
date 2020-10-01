@@ -25,7 +25,11 @@ namespace P3_code
         {
             FakeAppUserRepository loginRepo = new FakeAppUserRepository();
             bool madeIt = loginRepo.Login(UsernameTextbox.Text, PasswordTextbox.Text);
-            if (madeIt) Close();
+            if (!madeIt)
+            {
+                Environment.Exit(0);
+            }
+            else Close();
             DialogResult = DialogResult.OK;
         }
 

@@ -16,6 +16,7 @@ namespace P3_code
         {
             InitializeComponent();
             FormLogin loginWindow = new FormLogin();
+            
             loginWindow.ShowDialog();
             if (loginWindow.DialogResult == DialogResult.Cancel) Environment.Exit(0);
         }
