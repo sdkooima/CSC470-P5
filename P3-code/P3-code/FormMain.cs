@@ -19,6 +19,18 @@ namespace P3_code
             
             loginWindow.ShowDialog();
             if (loginWindow.DialogResult == DialogResult.Cancel) Environment.Exit(0);
+
+            FormProject projectSelect = new FormProject();
+
+
+            projectSelect.ShowDialog();
+            if (projectSelect.DialogResult == DialogResult.Cancel) Environment.Exit(0);
+            else
+            {
+                FakePreferenceRepository ReferenceRepo = new FakePreferenceRepository();
+                //this.Text = ReferenceRepo.GetPreference();
+            }
+            
         }
 
         private void asdToolStripMenuItem_Click(object sender, EventArgs e)
