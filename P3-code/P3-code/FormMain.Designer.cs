@@ -95,7 +95,7 @@
             // modifyProjectToolStripMenuItem
             // 
             this.modifyProjectToolStripMenuItem.Name = "modifyProjectToolStripMenuItem";
-            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifyProjectToolStripMenuItem.Text = "Modify Project";
             // 
             // removeProjectToolStripMenuItem
