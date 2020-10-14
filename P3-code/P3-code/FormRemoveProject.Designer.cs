@@ -1,6 +1,6 @@
 ﻿namespace P3_code
 {
-    partial class FormProject
+    partial class FormRemoveProject
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Projects = new System.Windows.Forms.ListBox();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSelect = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.Projects = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // Projects
-            // 
-            this.Projects.FormattingEnabled = true;
-            this.Projects.Location = new System.Drawing.Point(89, 28);
-            this.Projects.Name = "Projects";
-            this.Projects.Size = new System.Drawing.Size(597, 264);
-            this.Projects.TabIndex = 0;
-            this.Projects.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(255, 358);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(137, 43);
-            this.buttonCancel.TabIndex = 1;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSelect
             // 
-            this.buttonSelect.Location = new System.Drawing.Point(467, 358);
+            this.buttonSelect.Location = new System.Drawing.Point(466, 361);
             this.buttonSelect.Name = "buttonSelect";
             this.buttonSelect.Size = new System.Drawing.Size(138, 43);
-            this.buttonSelect.TabIndex = 2;
+            this.buttonSelect.TabIndex = 5;
             this.buttonSelect.Text = "Select Project";
             this.buttonSelect.UseVisualStyleBackColor = true;
             this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
-            // FormProject
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(254, 361);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(137, 43);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // Projects
+            // 
+            this.Projects.FormattingEnabled = true;
+            this.Projects.Location = new System.Drawing.Point(88, 31);
+            this.Projects.Name = "Projects";
+            this.Projects.Size = new System.Drawing.Size(597, 264);
+            this.Projects.TabIndex = 3;
+            // 
+            // FormRemoveProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,18 +69,17 @@
             this.Controls.Add(this.buttonSelect);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.Projects);
-            this.Name = "FormProject";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Select Project";
-            this.Load += new System.EventHandler(this.FormProject_Load);
+            this.Name = "FormRemoveProject";
+            this.Text = "Remove Project";
+            this.Load += new System.EventHandler(this.FormRemoveProject_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox Projects;
-        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSelect;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.ListBox Projects;
     }
 }

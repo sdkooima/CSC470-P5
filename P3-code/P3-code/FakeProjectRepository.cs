@@ -12,22 +12,25 @@ namespace P3_code
 
         public FakeProjectRepository()
         {
-            projects = new List<Project>();
-            projects.Add(new Project
+            if (projects == null)
             {
-                Id = 1,
-                Name = "Accounting Project"
-            });
-            projects.Add(new Project
-            {
-                Id = 2,
-                Name = "Big Expensive Project"
-            });
-            projects.Add(new Project
-            {
-                Id = 3,
-                Name = "Some other project"
-            });
+                projects = new List<Project>();
+                projects.Add(new Project
+                {
+                    Id = 1,
+                    Name = "Accounting Project"
+                });
+                projects.Add(new Project
+                {
+                    Id = 2,
+                    Name = "Big Expensive Project"
+                });
+                projects.Add(new Project
+                {
+                    Id = 3,
+                    Name = "Some other project"
+                });
+            }
         }
 
         public List<Project> GetAll()

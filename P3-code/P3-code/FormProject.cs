@@ -26,22 +26,28 @@ namespace P3_code
             Close();
         }
 
+        public int numOfSelects = -1;
+        public static string selectedProjectName;
+
         private void buttonSelect_Click(object sender, EventArgs e)
         {
 
-            if (listBox1.SelectedItem != null)
+            if (Projects.SelectedItem != null)
             {
                 FakePreferenceRepository PrefRepo = new FakePreferenceRepository();
                 Preference Selection = new Preference();
 
                 Selection.UserName = " ";
-                string SelectedItem = listBox1.SelectedItem.ToString();
+                string SelectedItem = Projects.SelectedItem.ToString();
                 string[] ListedString = SelectedItem.Split('-');
                 Selection.Value = ListedString[0].Trim();
                 Selection.Name = ListedString[1].Trim();
 
                 PrefRepo.SetPreference(Selection.UserName, Selection.Name, Selection.Value);
-
+                
+                selectedProjectName = Selection.Name;
+                numOfSelects++;
+                DialogResult = DialogResult.OK;
                 Close();
             }
             else
@@ -57,13 +63,13 @@ namespace P3_code
 
         private void FormProject_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
+            Projects.Items.Clear();
             FakeProjectRepository Project_Repo = new FakeProjectRepository();
             List<Project> existing_projects = Project_Repo.GetAll();
             foreach (Project p in existing_projects)
             {
                 string str = p.Id.ToString() + " - " + p.Name;
-                listBox1.Items.Add(str);
+                Projects.Items.Add(str);
             }
         }
     }

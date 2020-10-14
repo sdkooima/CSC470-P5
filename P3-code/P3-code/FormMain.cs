@@ -22,20 +22,56 @@ namespace P3_code
 
             FormProject projectSelect = new FormProject();
 
-
             projectSelect.ShowDialog();
             if (projectSelect.DialogResult == DialogResult.Cancel) Environment.Exit(0);
             else
             {
                 FakePreferenceRepository ReferenceRepo = new FakePreferenceRepository();
-                //this.Text = ReferenceRepo.GetPreference();
+                Text = "Main - " + FormProject.selectedProjectName;
+                Update();
             }
-            
         }
 
         private void asdToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void createProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCreateProject createProject = new FormCreateProject();
+            createProject.ShowDialog();
+            if (createProject.DialogResult == DialogResult.Cancel) createProject.Close();
+        }
+
+        private void selectProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProject projectSelect = new FormProject();
+            projectSelect.ShowDialog();
+
+            if (projectSelect.DialogResult == DialogResult.Cancel && projectSelect.numOfSelects == 0) Environment.Exit(0);
+            else if (projectSelect.DialogResult == DialogResult.Cancel && projectSelect.numOfSelects != 0) projectSelect.Close();
+            else
+            {
+                FakePreferenceRepository ReferenceRepo = new FakePreferenceRepository();
+            }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRemoveProject removeProject = new FormRemoveProject();
+            removeProject.ShowDialog();
+
+            if (removeProject.DialogResult == DialogResult.Cancel) removeProject.Close();
+            else
+            {
+                FakePreferenceRepository ReferenceRepo = new FakePreferenceRepository();
+            }
         }
     }
 }
